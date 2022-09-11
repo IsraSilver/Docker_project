@@ -28,8 +28,10 @@ pipeline {
         stage('TimeOut') {
             steps {
 	           sh '''
-		     #if [ "$(docker ps | grep alpcon)" ]; then
+		     if [ ! "$(docker ps | grep alpcon)" ]; then
 			 echo "Hello"
+			else:
+			echo "No hello"
 			 #docker kill AlpCon
 			'''
 				}
