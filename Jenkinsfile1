@@ -27,7 +27,7 @@ pipeline {
         
         stage('TimeOut') {
             steps {
-                echo "timeout(time: 10, unit: 'SECONDS')"
+                timeout(time: 3, unit: 'SECONDS')
             }
         }
         
