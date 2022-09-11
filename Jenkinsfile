@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone sources') {
+        stage('Hello') {
             steps {
-                checkout scm
+                echo 'Hello World'
             }
         }
     }
 }
+
