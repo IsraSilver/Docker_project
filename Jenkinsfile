@@ -26,7 +26,7 @@ pipeline {
         }
         stage('TimeOut') {
             steps {
-	           
+	           sh '''
 		     echo "Time out stage"
 			 
 			'''
