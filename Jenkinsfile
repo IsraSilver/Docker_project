@@ -27,7 +27,7 @@ pipeline {
 		       	sh '''
 			sleep 10
 			if [[ ps -ux | grep python3$ ]]; then 
-				echo "Test failed" && kill $(ps | grep python)	&& sleep 10
+				echo "Test failed" && kill $(ps -ux | grep python3$)	&& sleep 10
 			fi
 			'''
 			}
