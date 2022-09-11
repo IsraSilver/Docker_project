@@ -27,7 +27,8 @@ pipeline {
         stage('TimeOut') {
             steps {
 	           sh '''
-		     echo "Time out stage"
+		     if [ ! "$(docker ps | grep alpcon)" ]; then
+			 docker kill $(docker ps | grep alpcon)
 			 
 			'''
 				}
