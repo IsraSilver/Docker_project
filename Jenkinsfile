@@ -33,6 +33,7 @@ pipeline {
 			#else:
 			echo "No hello"
 			 #docker kill AlpCon
+			fi		 
 			'''
 				}
             }
