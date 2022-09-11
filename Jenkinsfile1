@@ -18,14 +18,18 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('Test and Run container') {
             steps {
                 sh 'chmod +x ./script.sh'
                 sh './script.sh'
             }
         }
         
-        
+        stage('TimeOut') {
+            steps {
+                echo 'timeout(time: 10, unit: 'SECONDS')'
+            }
+        }
         
         
     }
