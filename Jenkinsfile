@@ -30,9 +30,7 @@ pipeline {
 	           timeout(time: 14, unit: 'SECONDS')
 		    sh '''
 			 sleep 10
-			 if [ ! "$(docker ps | grep alpcon)" ]; then
-			 docker kill $(docker ps | grep alpcon)
-			sleep 5
+			 
 			'''
 				}
             }
