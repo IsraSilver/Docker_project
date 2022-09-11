@@ -34,7 +34,8 @@ pipeline {
 			 echo "Test failed"
 			 //sleep 5
 			//else
-			//docker kill AlpCon}
+			//docker kill AlpCon
+			}
 			fi		 
 			'''
 				}
