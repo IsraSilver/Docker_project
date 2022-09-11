@@ -29,12 +29,12 @@ pipeline {
             steps {
 			sh 'sleep 3'
 		       	sh '''
-			[ ps | grep python ]
+			if [ ps | grep python ]
 				then
 				echo "Test failed" ; 
 				kill $(ps | grep python);
 			
-			
+			fi
 			 
 					 
 			'''
