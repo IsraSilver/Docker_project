@@ -27,7 +27,7 @@ pipeline {
         }
         stage('TimeOut') {
             steps {
-		    //timeout(time: 15, unit: 'SECONDS')
+		    timeout(time: 15, unit: 'SECONDS')
 		    //sh 'sleep 10'
 	           sh '''
 		     if [ "$(docker ps | grep alpcon)" ]; then
