@@ -30,7 +30,7 @@ pipeline {
 	           sh '''
 		     if [ ! "$(docker ps | grep alpcon)" ]; then
 			 echo "Hello"
-			else:
+			#else:
 			echo "No hello"
 			 #docker kill AlpCon
 			'''
