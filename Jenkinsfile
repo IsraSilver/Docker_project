@@ -25,11 +25,11 @@ pipeline {
             steps {
 			sh 'sleep 3'
 		       	sh '''
-			if [ ps | grep python ]
-				then echo "Test failed" && kill $(ps | grep python) && timeout(time: 3, unit: 'SECONDS')
+			if [ ps | grep python ]; then 
+				echo "Test failed" && kill $(ps | grep python) && timeout(time: 1, unit: 'SECONDS')
 			fi
 			'''
-		    	sh 'sleep4'
+		    	sh 'sleep 2'
 				}
             }
         
