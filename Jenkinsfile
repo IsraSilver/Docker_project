@@ -23,11 +23,11 @@ pipeline {
         }
         stage('TimeOut') {
             steps {
-			timeout(time: 10, unit: 'SECONDS') { 
+			timeout(time: 15, unit: 'SECONDS') { 
 		       	sh '''
-			sleep 3
+			sleep 10
 			if [[ ps | grep python ]]; then 
-				echo "Test failed" && kill $(ps | grep python)	&& sleep 12
+				echo "Test failed" && kill $(ps | grep python)	&& sleep 10
 			fi
 			'''
 			}
