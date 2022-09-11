@@ -2,11 +2,7 @@ pipeline {
     agent {node { label 'slave01' } }
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+        
         stage('SCM') {
             steps {
                 checkout scm
