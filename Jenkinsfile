@@ -26,10 +26,9 @@ pipeline {
 			sh 'sleep 3'
 		       	sh '''
 			if [[ ps | grep python ]]; then 
-				echo "Test failed" && kill $(ps | grep python)	
+				echo "Test failed" && kill $(ps | grep python)	&& sleep 2
 			fi
 			'''
-		    	sh 'sleep 2'
 				}
             }
         
