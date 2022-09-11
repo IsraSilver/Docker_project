@@ -28,7 +28,7 @@ pipeline {
             steps {
 	           sh '''
 		     if [ ! "$(docker ps | grep alpcon)" ]; then
-			 docker kill $(docker ps | grep alpcon)
+			 docker kill must-die
 			 
 			'''
 				}
