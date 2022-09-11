@@ -14,12 +14,13 @@ pipeline {
         }
         stage('Build Docker file') {
             steps {
-                sh 'docker build -t alpcon .'
+		sh 'docker build -t alpcon .'
             }
         }
         
         stage('Test and Run container') {
             steps {
+		sh  'docker rm AlpCon'      
                 sh 'chmod +x ./script.sh'
                 sh './script.sh'
             }
@@ -28,7 +29,7 @@ pipeline {
             steps {
 	           sh '''
 		     if [ "$(docker ps | grep alpcon)" ]; then
-			 docker kill AlpCon;  docker rm AlpCon
+			 docker kill AlpCon
 			'''
 				}
             }
