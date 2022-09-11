@@ -31,14 +31,19 @@ pipeline {
 		    sh 'sleep 10'
 		    //}
 	           sh '''
-		     if [ "$(docker ps | grep alpcon)" ]; then
-			 echo "Test failed"
+		//	if [ "$(docker ps | grep alpcon)" ]; then
+		//	 echo "Test failed"
+		//	 docker kill AlpCon
+			if [ ps | grep python ]; then
+			echo "Test failed"
+			kill $(ps | grep python)
+			
 			timeout(time: 1, unit: 'SECONDS'){
 		    sh 'sleep 2' 
 			 }
 			 
-			//else
-			//docker kill AlpCon
+			else
+			docker kill AlpCon
 			
 			fi		 
 			'''
@@ -46,6 +51,12 @@ pipeline {
             }
         
         
+	    stage('Stop the container') {
+            steps {
+		sh  'docker stop AlpCon'      
+                
+            }
+        }
         
         
         
