@@ -7,10 +7,17 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('SCM') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Build Docker file') {
             steps {
                 sh 'docker build -t alpcon:0.0.1 .'
             }
         }
+        
+        
     }
 }
