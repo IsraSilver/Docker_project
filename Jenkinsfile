@@ -28,11 +28,11 @@ pipeline {
         stage('TimeOut') {
             steps {
 		    #timeout(time: 15, unit: 'SECONDS')
-		    sh 'sleep 10'
+		    #sh 'sleep 10'
 	           sh '''
 		     if [ "$(docker ps | grep alpcon)" ]; then
 			 echo "Test failed"
-			 sleep 5
+			 #sleep 5
 			else
 			docker kill AlpCon
 			fi		 
