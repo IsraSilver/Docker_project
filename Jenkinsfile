@@ -33,8 +33,8 @@ pipeline {
 		     if [ "$(docker ps | grep alpcon)" ]; then
 			 echo "Test failed"
 			 #sleep 5
-			else
-			docker kill AlpCon
+			#else
+			#docker kill AlpCon
 			fi		 
 			'''
 				}
