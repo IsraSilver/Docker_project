@@ -25,15 +25,7 @@ pipeline {
             }
         }
         
-        stage('TimeOut') {
-            steps {
-	           timeout(time: 14, unit: 'SECONDS')
-		    sh '''
-			 sleep 10
-			 
-			'''
-				}
-            }
+        
         }
         
         
