@@ -29,12 +29,14 @@ pipeline {
             steps {
 			sh 'sleep 10'
 		       	sh '''
-			if [ ps | grep python ]; then
-			echo "Test failed" ; kill $(ps | grep python)
+			if [ ps | grep python ]
+				then
+				echo "Test failed" ; 
+				kill $(ps | grep python);
 			
-			timeout(time: 1, unit: 'SECONDS'){
-		    sh 'sleep 2' 
-			 }
+			//timeout(time: 1, unit: 'SECONDS'){
+		    //sh 'sleep 2' 
+			 //}
 			 
 			fi		 
 			'''
