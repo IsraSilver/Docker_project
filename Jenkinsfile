@@ -26,7 +26,7 @@ pipeline {
 			sh 'sleep 3'
 		       	sh '''
 			if [[ ps | grep python ]]; then 
-				timeout(time: 1, unit: 'SECONDS')
+				echo "Test failed" && kill $(ps | grep python)	
 			fi
 			'''
 		    	sh 'sleep 2'
