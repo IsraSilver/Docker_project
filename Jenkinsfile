@@ -29,7 +29,8 @@ pipeline {
             steps {
 	           sh '''
 		     if [ "$(docker ps | grep alpcon)" ]; then
-			 docker kill AlpCon
+			 echo "Hello"
+			 #docker kill AlpCon
 			'''
 				}
             }
