@@ -1,0 +1,6 @@
+file=open("/home/public/test.txt", 'w+')
+file.write("This is a simple test file from AlpCon container.\n")
+file.seek(0)
+file.flush()
+print(file.read())
+file.close()
